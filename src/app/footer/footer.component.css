@@ -1,0 +1,15 @@
+#footer {
+    /* background: #f7f8f9; */
+    /* color: #45505b; */
+    font-size: 14px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+#footer a{
+    margin: 1%;
+}
+
+.credits{
+    margin-top: 1%;
+}
