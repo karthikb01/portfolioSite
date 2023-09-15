@@ -319,4 +319,10 @@ body {
     padding: 10px 12px;
 }
 
+:host ::ng-deep .spinner circle{   
+    stroke: #0563bb;
+}
 
+.contact a{
+    text-decoration: none;
+}

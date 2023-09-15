@@ -1,4 +1,3 @@
-
 <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container">
         <h1>Hello!</h1>
@@ -84,7 +83,7 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Resume</h2>
+            <h2 class="mt-3">Resume</h2>
 
             <a href="../../assets/Resume.pdf" target="_blank"><button>Download
                     Resmue</button></a>
@@ -150,17 +149,19 @@
     <div class="cards">
         <div class="bg-white m-3">
             <h2>FoodRunner</h2>
-            <p>A web based Railway ticket monitoring system with seperate admin and user modules. <br> Tech Stack: Bootstrap, Php , Js, MySql.</p>
+            <p>A web based Railway ticket monitoring system with seperate admin and user modules. <br> Tech Stack:
+                Bootstrap, Php , Js, MySql.</p>
 
             <a href="https://github.com/karthikb01/FoodRunner" target="_blank">
                 <img src="../../assets/icons/github.svg" height="30px">
             </a>
 
         </div>
-        
+
         <div class="bg-white m-3">
             <h2>Railways</h2>
-            <p>A web based Railway ticket monitoring system with seperate admin and user modules. <br> Tech Stack: Bootstrap, Php , Js, MySql.</p>
+            <p>A web based Railway ticket monitoring system with seperate admin and user modules. <br> Tech Stack:
+                Bootstrap, Php , Js, MySql.</p>
 
             <a href="https://github.com/karthikb01/Railways" target="_blank">
                 <img src="../../assets/icons/github.svg" height="30px">
@@ -172,8 +173,9 @@
         </div>
         <div class="bg-white m-3">
             <h2>Information Retreival System</h2>
-            <p>A Web application that retreives relevant information and latest news based on a user querey. <br>Tech stack : Python, Flask.</p>
-            
+            <p>A Web application that retreives relevant information and latest news based on a user querey. <br>Tech
+                stack : Python, Flask.</p>
+
             <a href="https://github.com/karthikb01/information_retreival" target="_blank">
                 <img src="../../assets/icons/github.svg" height="30px">
             </a>
@@ -186,9 +188,9 @@
                 <img src="../../assets/icons/github.svg" height="30px">
             </a>
 
-            <a href="">
+            <!-- <a href="">
                 <img src="../../assets/icons/link.svg" height="30px">
-            </a>
+            </a> -->
         </div>
     </div>
 </section>
@@ -206,26 +208,32 @@
 
             <div class="col-lg-4">
                 <div class="info">
-                    <div class="address">
-                        <!-- <i class="bi bi-geo-alt"></i> -->
-                        <img src="../../assets/icons/location.svg">
-                        <h4>Location:</h4>
-                        <p>Madhur Po, Kasaragod, Kerala 671124</p>
-                    </div>
+                    <a href="https://maps.google.com/maps?q=Madhur+Kasaragod">
+                        <div class="address">
+                            <!-- <i class="bi bi-geo-alt"></i> -->
+                            <img src="../../assets/icons/location.svg">
+                            <h4>Location:</h4>
+                            <p>Madhur Po, Kasaragod, Kerala 671124</p>
+                        </div>
+                    </a>
 
-                    <div class="email">
-                        <!-- <i class="bi bi-envelope"></i> -->
-                        <img src="../../assets/icons/email.svg">
-                        <h4>Email:</h4>
-                        <p>karthikbannur@gmail.com</p>
-                    </div>
+                    <a href="mailto:karthikbannur@gmail.com" target="_blank">
+                        <div class="email">
+                            <!-- <i class="bi bi-envelope"></i> -->
+                            <img src="../../assets/icons/email.svg">
+                            <h4>Email:</h4>
+                            <p>karthikbannur@gmail.com</p>
+                        </div>
+                    </a>
 
-                    <div class="phone">
-                        <!-- <i class="bi bi-phone"></i> -->
-                        <img src="../../assets/icons/phone.svg">
-                        <h4>Call:</h4>
-                        <p>+91 9400148115</p>
-                    </div>
+                    <a href="tel:+919400148115">
+                        <div class="phone">
+                            <!-- <i class="bi bi-phone"></i> -->
+                            <img src="../../assets/icons/phone.svg">
+                            <h4>Call:</h4>
+                            <p>+91 9400148115</p>
+                        </div>
+                    </a>
 
                 </div>
 
@@ -233,31 +241,37 @@
 
             <div class="col-lg-8 mt-5 mt-lg-0">
 
-                <form  class="email-form">
+                <!-- {{contact.value | json}} -->
+
+                <form class="email-form" #contact="ngForm" (submit)="sendEmail($event)">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                required>
+                            <input type="text" [(ngModel)]="message.name" name="name" class="form-control" id="name"
+                                placeholder="Your Name" required>
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                required>
+                            <input type="email" [(ngModel)]="message.email" class="form-control" name="email" id="email"
+                                placeholder="Your Email" required>
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                            required>
+                        <input type="text" [(ngModel)]="message.subject" class="form-control" name="subject"
+                            id="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                            required></textarea>
+                        <textarea [(ngModel)]="message.message" class="form-control" name="message" rows="5"
+                            placeholder="Message" required></textarea>
                     </div>
                     <div class="my-3">
                         <!-- <div class="loading">Loading</div> -->
                         <!-- <div class="error-message"></div> -->
                         <!-- <div class="sent-message">Your message has been sent. Thank you!</div> -->
                     </div>
-                    <div><button type="submit">Send Message</button></div>
+                    <div>
+                        <button type="submit">Send Message</button>
+                        <mat-spinner *ngIf="wait" class="mt-3 spinner" diameter="30"></mat-spinner>
+                    </div>
+
                 </form>
 
             </div>
