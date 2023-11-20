@@ -12,6 +12,9 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 })
 export class LandingComponent {
 
+  selected = 'primary'
+  flag = false
+
   constructor(private dialog : MatDialog) {}
 
   @ViewChild('contact') form! : NgForm

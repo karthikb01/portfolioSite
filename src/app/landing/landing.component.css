@@ -130,7 +130,12 @@ body {
 
 .about .row div:first-child {
     text-align: center;
+}
 
+.image-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-fluid {
@@ -326,3 +331,4 @@ body {
 .contact a{
     text-decoration: none;
 }
+
