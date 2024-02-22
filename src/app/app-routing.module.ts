@@ -4,11 +4,16 @@ import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   {
-    path : 'home',
-    component : LandingComponent
+    path: 'home',
+    component: LandingComponent
   },
   {
-    path : '',
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }, 
+  {
+    path : '**',
     redirectTo : 'home',
     pathMatch : 'full'
   }
